@@ -24,7 +24,7 @@
     },
     "StorageAccountName": {
       "type": "string",
-      "defaultValue": "MercaStorageAccount"
+      "defaultValue": "MercaStorageAccount",
       "metadata": {
         "description": "This is the name of Storage Account"
       }
