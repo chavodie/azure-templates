@@ -6,7 +6,7 @@
       "value": "West Europe"
     },
     "tier": {
-      "value": "Premium-LRS"
+      "value": "Premium_LRS"
     },
     "StorageAccountName": {
       "value": "MercastorageAccount"

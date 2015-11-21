@@ -12,8 +12,11 @@
     "tier": {
       "type": "string",
       "allowedValues": [
-        "Premium-LRS",
-        "Standard-LRS"
+        "Standard_LRS",
+        "Standard_ZRS",
+        "Standard_GRS",
+        "Standard_RAGRS", 
+        "Premium_LRS"
       ],
       "metadata": {
         "description": "This is the type of Storage Account"
@@ -21,6 +24,7 @@
     },
     "StorageAccountName": {
       "type": "string",
+      "defaultValue": "MercaStorageAccount"
       "metadata": {
         "description": "This is the name of Storage Account"
       }
