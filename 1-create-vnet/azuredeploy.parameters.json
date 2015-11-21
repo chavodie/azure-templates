@@ -1,0 +1,33 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "West Europe"
+    },
+    "virtualNetworkName": {
+      "value": "VNETtest"
+    },
+    "addressPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "subnet1Name": {
+      "value": "Public-Subnet"
+    },
+    "subnet2Name": {
+      "value": "Private-Subnet"
+    },
+    "subnet3Name": {
+      "value": "DB-Subnet"
+    },
+    "subnet1Prefix": {
+      "value": "10.0.0.0/24"
+    },
+    "subnet2Prefix": {
+      "value": "10.0.1.0/24"
+    },
+    "subnet3Prefix": {
+      "value": "10.0.2.0/24"
+    }
+  }
+}

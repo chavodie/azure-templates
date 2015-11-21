@@ -1,0 +1,105 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters" : {
+      "location": {
+        "type": "String",
+        "defaultValue": "West Europe",
+        "metadata" : {
+          "Description" : "Deployment location"
+        }
+      },
+      "virtualNetworkName":{
+        "type" : "string",
+        "defaultValue":"myVNET",
+        "metadata" : {
+          "Description" : "VNET name"
+        }
+      },
+      "addressPrefix":{
+        "type" : "string",
+        "defaultValue" : "10.0.0.0/16",
+        "metadata" : {
+          "Description" : "Address prefix"
+        }
+
+      },
+      "subnet1Name": {
+        "type" : "string",
+        "defaultValue" : "Public-Subnet",
+        "metadata" : {
+          "Description" : "Public Subnet"
+        }
+      },
+      "subnet2Name": {
+        "type" : "string",
+        "defaultValue" : "Private-subnet",
+        "metadata" : {
+          "Description" : "Private subnet"
+        }
+      },
+      "subnet3Name": {
+        "type" : "string",
+        "defaultValue" : "BD-subnet",
+        "metadata" : {
+          "Description" : "Database subnet"
+        }
+      },
+      "subnet1Prefix" : {
+        "type" : "string",
+        "defaultValue" : "10.0.0.0/24",
+        "metadata" : {
+          "Description" : "Subnet 1 Prefix"
+        }
+      },
+      "subnet2Prefix" : {
+        "type" : "string",
+        "defaultValue" : "10.0.1.0/24",
+        "metadata" : {
+          "Description" : "Subnet 2 Prefix"
+        }
+      },
+      "subnet3Prefix" : {
+        "type" : "string",
+        "defaultValue" : "10.0.3.0/24",
+        "metadata" : {
+          "Description" : "Subnet 3 Prefix"
+        }
+      }
+    },
+    "resources": [
+    {
+      "apiVersion": "2015-05-01-preview",
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('virtualNetworkName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[parameters('addressPrefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[parameters('subnet1Name')]",
+            "properties" : {
+              "addressPrefix": "[parameters('subnet1Prefix')]"
+            }
+          },
+          {
+            "name": "[parameters('subnet2Name')]",
+            "properties" : {
+              "addressPrefix": "[parameters('subnet2Prefix')]"
+            }
+          },
+                    {
+            "name": "[parameters('subnet3Name')]",
+            "properties" : {
+              "addressPrefix": "[parameters('subnet3Prefix')]"
+            }
+          }
+        ]
+      }
+    }
+    ]
+}
